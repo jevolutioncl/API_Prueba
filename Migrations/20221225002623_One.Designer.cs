@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIPrueba.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20221220174154_One")]
+    [Migration("20221225002623_One")]
     partial class One
     {
         /// <inheritdoc />

@@ -33,6 +33,7 @@ namespace APIPrueba.Migrations
                     NombreAlbum = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Año = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nota = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdArtista = table.Column<int>(type: "int", nullable: false),
                     ArtistaIdArtista = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
