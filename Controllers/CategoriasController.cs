@@ -94,17 +94,15 @@ namespace API_Prueba.Controllers
         [HttpGet]
         [Route("getCategoriasByName")]
 
-        public async Task<IActionResult> getCategoriasByName(string Nombre)
+        public async Task<IActionResult> getCategoriasByName(string buscarPorNombre)
         {
-            var categoria = await _apiDbContext.Categorias.FindAsync(Nombre);
-            if (categoria != null)
+            var categoria = from categorias in _apiDbContext.Categorias select categorias;
+            if (!String.IsNullOrEmpty(buscarPorNombre))
             {
-                return Ok(categoria);
+                categoria = categoria.Where(S => S.Nombre!.Contains(buscarPorNombre));
             }
-            else
-            {
-                return NotFound();
-            }
+
+            return Ok(await categoria.ToListAsync());
         }
     }
 }

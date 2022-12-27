@@ -97,19 +97,5 @@ namespace API_Prueba.Controllers
                 return NotFound();
             }
         }
-        [HttpGet]
-        [Route("getProductoByCategoria")]
-        public async Task<IActionResult> getProductoByCategoria(int CategoriaId)
-        {
-            var producto = await _apiDbcontext.Productos.FindAsync(CategoriaId);
-            if (producto != null)
-            {
-                return Ok(producto);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
     }
-}
+}C
